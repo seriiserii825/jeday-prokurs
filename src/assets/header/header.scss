@@ -145,10 +145,6 @@ ul {
     @include robotobold;
 
     font-size: 2em;
-
-    @media screen and (max-width: 340px) {
-      font-size: 1.8em;
-    }
   }
 }
 
@@ -164,6 +160,14 @@ ul {
   @include cleanvertisinglight;
 
   font-size: 3.8em;
+
+  @media screen and (max-width: $md) {
+    line-height: 1.2;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 3.6em;
+  }
 }
 
 .header-subtitle {
@@ -191,6 +195,29 @@ ul {
     background: rgba(255, 255, 255, .35);
     cursor: pointer;
 
+    @media screen and (max-width: 510px) {
+      font-size: .8em;
+    }
+
+    @media screen and (max-width: 430px) {
+      padding: 20px 10px;
+      font-size: .8em;
+    }
+
+    @media screen and (max-width: 340px) {
+      font-size: .6em;
+    }
+
+    .hidden-xs {
+      @media screen and (max-width: 430px) {
+        display: none;
+      }
+
+      @media screen and (min-width: 430px) {
+        display: inline;
+      }
+    }
+
     &:first-child {
       margin-right: -4px;
     }
@@ -204,7 +231,7 @@ ul {
     @include robotobold;
 
     padding: 28px 32px;
-    min-height: 156px;
+    height: 286px;
     background: rgba(255, 255, 255, .6);
     font-size: 1.1em;
     text-transform: uppercase;
