@@ -22,6 +22,39 @@ ul {
   list-style-type: none;
 }
 
+.btn {
+  @include robotobold;
+
+  display: inline-block;
+  padding: 0 28px;
+  height: 48px;
+  line-height: 48px;
+  text-decoration: none;
+  color: $white;
+  background: $accent;
+  transition: all .6s ease;
+
+  &:hover {
+    background: lighten($accent, 5%);
+  }
+
+  &.btn--green {
+    background: $green;
+    &:hover {
+      background: lighten($green, 5%);
+    }
+  }
+
+  &.btn-white {
+    color: $text-color;
+    background: $white;
+
+    &:hover {
+      background: darken($white, 5%);
+    }
+  }
+}
+
 .section-title {
   @include cleanvertisinglight;
 
@@ -38,8 +71,163 @@ ul {
   }
 }
 
-.icon-small {
-  color: green;
-  font-size: 40px;
+.header-main {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  min-height: 640px;
+  background: url("../i/header-bg.jpg") no-repeat center;
+  background-size: cover;
+
+  .logo {
+    @include robotobold;
+
+    font-size: 2.5em;
+    color: $white;
+    text-decoration: none;
+
+    @media screen and (max-width: $md) {
+      display: table;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+  }
 }
+
+.header-top {
+  margin-bottom: 70px;
+}
+
+/* header-tabs
+====================================================*/
+.header-tabs {
+  display: flex;
+  color: $white;
+
+  @media screen and (max-width: $md) {
+    display: table;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    flex-basis: 330px;
+    margin-left: auto;
+  }
+
+  .tabs {
+    text-align: right;
+  }
+
+  .tab,
+  .tab a {
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:first-child {
+      position: relative;
+      margin-right: 10px;
+
+      &::after {
+        content: ' /';
+        position: absolute;
+        top: -1px;
+        right: -10px;
+
+      }
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  .tab_content {
+    @include robotobold;
+
+    font-size: 2em;
+
+    @media screen and (max-width: 340px) {
+      font-size: 1.8em;
+    }
+  }
+}
+
+/* header-content
+====================================================*/
+.header-title,
+.header-subtitle {
+  margin: 0;
+  color: $white;
+}
+
+.header-title {
+  @include cleanvertisinglight;
+
+  font-size: 3.8em;
+}
+
+.header-subtitle {
+  @include cleanvertisinglight;
+
+  margin-bottom: 30px;
+
+  font-size: 2.3em;
+}
+
+/* header-content-tabs
+====================================================*/
+.header-content-tabs {
+  .tabs {
+    box-sizing: border-box;
+  }
+
+  .tab {
+    @include robotobold;
+
+    display: inline-block;
+    padding: 20px 18px;
+    text-transform: uppercase;
+    color: $white;
+    background: rgba(255, 255, 255, .35);
+    cursor: pointer;
+
+    &:first-child {
+      margin-right: -4px;
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, .6);
+    }
+  }
+
+  .tab_content {
+    @include robotobold;
+
+    padding: 28px 32px;
+    min-height: 156px;
+    background: rgba(255, 255, 255, .6);
+    font-size: 1.1em;
+    text-transform: uppercase;
+  }
+
+  .tab-list__item {
+    position: relative;
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  .icon {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, .4);
+  }
+
+  .btn-wrap {
+    text-align: right;
+  }
+}
+
+
 
