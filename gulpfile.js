@@ -116,8 +116,8 @@ gulp.task("css:build", function(){
         .pipe(autoprefixer())
         .pipe(removeComments())
         .pipe(cssbeautify())
-        .pipe(sourcemaps.write())
         .pipe(csscomb())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(browserSync.stream())
         .pipe(cssnano({
@@ -140,8 +140,8 @@ gulp.task("header:build", function(){
         .pipe(autoprefixer())
         .pipe(removeComments())
         .pipe(cssbeautify())
-        .pipe(sourcemaps.write())
         .pipe(csscomb())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.header))
         .pipe(browserSync.stream())
         .pipe(cssnano({
@@ -322,7 +322,7 @@ gulp.task("watch", function(){
         gulp.start("css:build");
     });
     watch([path.watch.libs], function(event, cb){
-        gulp.start("css:libs");
+        gulp.start("libs:build");
     });
     watch([path.watch.header], function(event, cb){
         gulp.start("header:build");

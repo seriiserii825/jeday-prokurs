@@ -4,7 +4,7 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../sass/partials/variables";
 @import "../sass/partials/mixins";
-@import "../sass/partials/icons";
+//@import "../sass/partials/icons";
 
 body {
   @include roboto;
@@ -145,6 +145,12 @@ ul {
     @include robotobold;
 
     font-size: 2em;
+
+    .tab_item {
+      @media screen and (max-width: 350px) {
+        font-size: .8em;
+      }
+    }
   }
 }
 
@@ -231,10 +237,16 @@ ul {
     @include robotobold;
 
     padding: 28px 32px;
-    height: 286px;
+    min-height: 286px;
     background: rgba(255, 255, 255, .6);
     font-size: 1.1em;
     text-transform: uppercase;
+
+    a.btn {
+      @media screen and (max-width: 320px) {
+        font-size: .8em;
+      }
+    }
   }
 
   .tab-list__item {

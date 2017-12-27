@@ -14,4 +14,17 @@ $(function(){
         $("#js-header-content-tabs .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
         $("#js-header-content-tabs .tab_item").hide().eq($(this).index()).fadeIn()
     }).eq(0).addClass("active");
+
+    /* parralax
+    ====================================================*/
+    $.stellar({
+        responsive: true,
+        horizontalOffset: 40
+    });
+
+    /* slick
+    ====================================================*/
+    $('#js-reviews-slider').slick();
+
+
 });
